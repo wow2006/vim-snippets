@@ -72,6 +72,26 @@ snippet vector "std::vector (v)"
 std::vector<${1:char}> v$0;
 endsnippet
 
+snippet main_auto "auto main()"
+// STL
+#include <cstdlib>
+
+auto main() -> int {
+	${VISUAL}$0
+	return EXIT_SUCCESS;
+}
+endsnippet
+
+snippet main_auto_args "auto main(args)"
+// STL
+#include <cstdlib>
+
+auto main(int argc, char *argv[]) -> int {
+	${VISUAL}$0
+	return EXIT_SUCCESS;
+}
+endsnippet
+
 snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
 endsnippet
@@ -96,15 +116,14 @@ endsnippet
 
 snippet fnc "Basic c++ doxygen function template" b
 /**
-* @brief: ${4:brief}
-*
-* @param: `!p write_docstring_args(t[3],snip)`
-*
-* @return: `!p snip.rv = t[1]`
-*/
-${1:ReturnType} ${2:FunctionName}(${3:param})
-{
-	${0:FunctionBody}
+ * @brief: ${4:brief}
+ *
+ * @param: `!p write_docstring_args(t[3],snip)`
+ *
+ * @return: `!p snip.rv = t[1]`
+ */
+auto ${2:FunctionName}(${3:param}) -> ${1:ReturnType} {
+    ${0:FunctionBody}
 }
 endsnippet
 # vim:ft=snippets:
